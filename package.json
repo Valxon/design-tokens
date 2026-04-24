@@ -1,0 +1,73 @@
+{
+  "name": "@valxon/design-tokens",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Valxon design primitives — generated from DTCG JSON via Style Dictionary.",
+  "type": "module",
+  "files": [
+    "dist",
+    "src",
+    "tokens",
+    "style-dictionary.config.mjs",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./css": "./dist/tokens.css",
+    "./tailwind": {
+      "import": "./dist/tailwind.mjs",
+      "require": "./dist/tailwind.cjs"
+    },
+    "./email": {
+      "import": "./dist/email.js",
+      "types": "./dist/email.d.ts"
+    },
+    "./fonts/next": {
+      "import": "./dist/fonts-next.js",
+      "types": "./dist/fonts-next.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "node src/build.mjs",
+    "check": "node src/check.mjs",
+    "lint": "eslint . --max-warnings 0",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepare": "node src/build.mjs",
+    "preview": "node src/generate-preview.mjs",
+    "format": "prettier --write ."
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "next": ">=14",
+    "tailwindcss": ">=3"
+  },
+  "peerDependenciesMeta": {
+    "next": { "optional": true },
+    "tailwindcss": { "optional": true }
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.0",
+    "@types/node": "^22.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "eslint": "^9.0.0",
+    "prettier": "^3.3.0",
+    "style-dictionary": "^4.1.0",
+    "typescript": "^5.5.0",
+    "vitest": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Valxon/design-tokens.git"
+  },
+  "license": "UNLICENSED"
+}

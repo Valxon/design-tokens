@@ -1,0 +1,8 @@
+node_modules/
+dist/
+docs/preview.html
+.DS_Store
+*.log
+coverage/
+.env
+.env.local
