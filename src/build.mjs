@@ -52,6 +52,14 @@ export declare const contentWidth: Readonly<{ [k: string]: string }>;
 export declare const tones: Readonly<{ [k: string]: { fg: string; bg: string } }>;
 `;
   writeFileSync(join(DIST, "email.d.ts"), emailDts);
+
+  const tailwindDts = `/* Auto-generated companion types for dist/tailwind.(cjs|mjs). */
+import type { Config } from "tailwindcss";
+
+declare const preset: Pick<Config, "theme">;
+export default preset;
+`;
+  writeFileSync(join(DIST, "tailwind.d.ts"), tailwindDts);
 }
 
 function copyFonts() {
