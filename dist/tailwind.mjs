@@ -64,7 +64,7 @@ export default {
         "body": [
           "13px",
           {
-            "lineHeight": "1.4"
+            "lineHeight": "1.5"
           }
         ],
         "label": [
@@ -76,25 +76,37 @@ export default {
         "section": [
           "15px",
           {
-            "lineHeight": "1.4"
+            "lineHeight": "1.3"
           }
         ],
         "page-title": [
           "22px",
           {
-            "lineHeight": "1.4"
+            "lineHeight": "1.2"
           }
         ],
         "login-title": [
           "24px",
           {
-            "lineHeight": "1.4"
+            "lineHeight": "1.2"
           }
         ],
         "hero": [
           "28px",
           {
-            "lineHeight": "1.4"
+            "lineHeight": "1.1"
+          }
+        ],
+        "page": [
+          "22px",
+          {
+            "lineHeight": "1.2"
+          }
+        ],
+        "login": [
+          "24px",
+          {
+            "lineHeight": "1.2"
           }
         ]
       },

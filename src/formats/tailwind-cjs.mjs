@@ -20,11 +20,29 @@ export function buildTailwindPreset(dictionary) {
   const colors = group("color");
   Object.assign(colors, group("tone"));
 
+  // Per-size line-height assignment. Defaults to "default" (1.4); overrides
+  // below match the proportions from the original Valxon brand manual.
+  const lineHeightBySize = {
+    hero: "tight",     // 1.1 — dashboard stats, large numeric values
+    "page-title": "snug",    // 1.2
+    "login-title": "snug",   // 1.2
+    section: "compact",      // 1.3
+    body: "body",            // 1.5
+  };
+  const lineHeightValue = (name) => {
+    const tokenName = lineHeightBySize[name] ?? "default";
+    return String(get(`font.line-height.${tokenName}`) ?? "1.4");
+  };
+
   const fontSize = {};
   for (const t of dictionary.allTokens.filter((t) => t.path.join(".").startsWith("font.size."))) {
     const key = t.path[t.path.length - 1];
-    fontSize[key] = [t.$value, { lineHeight: "1.4" }];
+    fontSize[key] = [t.$value, { lineHeight: lineHeightValue(key) }];
   }
+  // Back-compat aliases: consumers that predate the "-title" suffix
+  // (e.g., `text-page`, `text-login`) continue to resolve.
+  if (fontSize["page-title"]) fontSize.page = fontSize["page-title"];
+  if (fontSize["login-title"]) fontSize.login = fontSize["login-title"];
 
   const fontWeight = Object.fromEntries(
     dictionary.allTokens

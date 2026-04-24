@@ -1,6 +1,6 @@
 {
   "name": "@valxon/design-tokens",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "private": false,
   "description": "Valxon design primitives — generated from DTCG JSON via Style Dictionary.",
   "type": "module",
