@@ -1,10 +1,8 @@
 # Every change requires two approvers.
-# TODO: replace @dusan-placeholder with Dusan's actual GitHub handle before the repo goes through a CODEOWNERS-enforced review. Karel's handle (@poplskar) is confirmed.
-* @poplskar @dusan-placeholder
+* @poplskar @valxondusan
 
 # Tokens require design-lead review on top of engineering.
-/tokens/ @poplskar @dusan-placeholder
+/tokens/ @poplskar @valxondusan
 
 # ADRs require both signatures.
-# TODO: replace @dusan-placeholder when known.
-/docs/decisions/ @poplskar @dusan-placeholder
+/docs/decisions/ @poplskar @valxondusan
