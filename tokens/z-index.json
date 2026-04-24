@@ -1,0 +1,12 @@
+{
+  "z-index": {
+    "$type": "number",
+    "base":     { "$value": 0,    "$description": "Default stacking context." },
+    "dropdown": { "$value": 100,  "$description": "Dropdowns, comboboxes, select menus." },
+    "sticky":   { "$value": 200,  "$description": "Sticky headers, filter bars." },
+    "overlay":  { "$value": 1000, "$description": "Drawer/dialog scrim." },
+    "modal":    { "$value": 1100, "$description": "Modal dialog contents." },
+    "toast":    { "$value": 1200, "$description": "Toast notifications." },
+    "popover":  { "$value": 1300, "$description": "Popovers, tooltips — always top-most." }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "content-width": {
+    "$type": "dimension",
+    "narrow":  { "$value": "720px",  "$description": "Article / form-heavy pages." },
+    "default": { "$value": "1200px", "$description": "Standard dashboard / list pages." },
+    "wide":    { "$value": "1440px", "$description": "Data-dense tables, side-by-side panels." },
+    "full":    { "$value": "100%",   "$description": "Full-bleed admin screens." }
+  }
+}

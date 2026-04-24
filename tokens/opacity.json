@@ -1,0 +1,13 @@
+{
+  "opacity": {
+    "$type": "number",
+    "6":  { "$value": 0.06, "$description": "Neutral tint background (statusConfig bg for new/confirmed)." },
+    "8":  { "$value": 0.08, "$description": "Colored tint background (statusConfig bg for attention/success/danger)." },
+    "10": { "$value": 0.10 },
+    "16": { "$value": 0.16 },
+    "24": { "$value": 0.24 },
+    "40": { "$value": 0.40 },
+    "60": { "$value": 0.60 },
+    "80": { "$value": 0.80 }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "tone": {
+    "success": {
+      "fg": { "$type": "color", "$value": "{color.status-green}",   "$description": "Foreground for success state (shipped/delivered/completed)." },
+      "bg": { "$type": "color", "$value": "rgba(45,159,127,0.08)",  "$description": "Tinted background for success state. status-green × opacity.8." }
+    },
+    "attention": {
+      "fg": { "$type": "color", "$value": "{color.malina}",         "$description": "Foreground for attention state (awaiting approval, in progress)." },
+      "bg": { "$type": "color", "$value": "rgba(232,66,72,0.08)",   "$description": "Tinted background for attention state. malina × opacity.8." }
+    },
+    "neutral": {
+      "fg": { "$type": "color", "$value": "{color.antracit}",       "$description": "Foreground for neutral state (new, confirmed)." },
+      "bg": { "$type": "color", "$value": "rgba(53,56,61,0.06)",    "$description": "Tinted background for neutral state. antracit × opacity.6." }
+    },
+    "danger": {
+      "fg": { "$type": "color", "$value": "{color.status-deep-red}","$description": "Foreground for danger/cancellation state." },
+      "bg": { "$type": "color", "$value": "rgba(192,53,58,0.08)",   "$description": "Tinted background for danger state. status-deep-red × opacity.8." }
+    },
+    "warning": {
+      "fg": { "$type": "color", "$value": "{color.status-warning}", "$description": "Foreground for warning state (sync degraded)." },
+      "bg": { "$type": "color", "$value": "rgba(217,119,6,0.08)",   "$description": "Tinted background for warning state." }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "font": {
+    "family": {
+      "$type": "fontFamily",
+      "sans": { "$value": ["Work Sans", "sans-serif"], "$description": "Brand font — Work Sans, Google Fonts." },
+      "mono": { "$value": ["JetBrains Mono", "monospace"], "$description": "Monospace for codes, IDs, timestamps." }
+    },
+    "weight": {
+      "$type": "fontWeight",
+      "regular":   { "$value": 400, "$description": "Rarely used — light labels only." },
+      "body":      { "$value": 500, "$description": "Body text base. Brand uses Medium, NOT Regular." },
+      "semibold":  { "$value": 600, "$description": "Section headers, nav labels, table headers." },
+      "bold":      { "$value": 700, "$description": "Bold accents, card labels, button text." },
+      "hero":      { "$value": 800, "$description": "Hero numbers, dashboard stats, page titles." }
+    },
+    "size": {
+      "$type": "dimension",
+      "micro":       { "$value": "10px", "$description": "Table column headers, category badges." },
+      "small":       { "$value": "11px", "$description": "Timestamps, secondary info." },
+      "ui":          { "$value": "12px", "$description": "Status badges, filter pills, sidebar labels." },
+      "body":        { "$value": "13px", "$description": "Body text." },
+      "label":       { "$value": "14px", "$description": "Input labels, nav items." },
+      "section":     { "$value": "15px", "$description": "Section headings." },
+      "page-title":  { "$value": "22px", "$description": "Page titles (Objednávky, Přehled)." },
+      "login-title": { "$value": "24px", "$description": "Login heading." },
+      "hero":        { "$value": "28px", "$description": "Dashboard hero stat numbers, order detail summary values." }
+    },
+    "line-height": {
+      "$type": "number",
+      "tight":   { "$value": 1.1, "$description": "Hero numbers, page titles." },
+      "snug":    { "$value": 1.2, "$description": "Page titles." },
+      "compact": { "$value": 1.3, "$description": "Section headings." },
+      "default": { "$value": 1.4, "$description": "UI, labels, small/micro text." },
+      "body":    { "$value": 1.5, "$description": "Body text." }
+    }
+  }
+}

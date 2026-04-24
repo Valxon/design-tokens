@@ -1,0 +1,19 @@
+{
+  "radius": {
+    "$type": "dimension",
+    "small":  { "$value": "8px",  "$description": "Pills, badges, inner elements." },
+    "avatar": { "$value": "10px", "$description": "Avatar/logo square radius." },
+    "card":   { "$value": "12px", "$description": "Universal border radius — brand standard (15pt on A4 ≈ 12px on screen)." }
+  },
+  "shadow": {
+    "$type": "shadow",
+    "card":       { "$value": { "offsetX": "0", "offsetY": "1px", "blur": "3px",  "spread": "0", "color": "rgba(0,0,0,0.04)" }, "$description": "Card resting shadow — whisper-quiet." },
+    "card-hover": { "$value": { "offsetX": "0", "offsetY": "4px", "blur": "12px", "spread": "0", "color": "rgba(0,0,0,0.06)" }, "$description": "Card hover lift." }
+  },
+  "border": {
+    "$type": "strokeStyle",
+    "card":            { "$value": { "width": "1px", "style": "solid", "color": "{color.seda}"     }, "$description": "Card border." },
+    "divider":         { "$value": { "width": "1px", "style": "solid", "color": "{color.mid-seda}" }, "$description": "Section divider within cards." },
+    "divider-strong":  { "$value": { "width": "2px", "style": "solid", "color": "{color.antracit}" }, "$description": "Strong divider (e.g., table total row)." }
+  }
+}

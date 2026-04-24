@@ -1,0 +1,27 @@
+{
+  "color": {
+    "$type": "color",
+    "antracit":        { "$value": "#35383d", "$description": "Primary text, dark backgrounds, sidebar. Pantone 431 C." },
+    "sv-antracit":     { "$value": "#484b52", "$description": "Secondary text, subtle elements. Pantone 432 C." },
+    "malina":          { "$value": "#e84248", "$description": "Primary accent, CTAs, active states, alerts. Pantone 1788 C. Max 30% of any screen per brand manual." },
+    "sv-malina":       { "$value": "#ea5851", "$description": "Hover state for malina elements. Pantone Warm Red C." },
+    "seda":            { "$value": "#e3e9ed", "$description": "Borders, dividers, card backgrounds on white. Pantone 642 C." },
+    "mid-seda":        { "$value": "#ecf0f3", "$description": "Alternate row, page background subtle." },
+    "sv-seda":         { "$value": "#f6f8f9", "$description": "Page background, subtle tint." },
+    "white":           { "$value": "#ffffff", "$description": "Card surfaces, content areas." },
+    "status-green":    { "$value": "#2d9f7f", "$description": "Delivered/completed status ONLY. Not a general-use green." },
+    "status-deep-red": { "$value": "#c0353a", "$description": "Cancelled/error deep red." },
+    "status-warning":  { "$value": "#d97706", "$description": "Sync warning / degraded state — amber." }
+  },
+  "surface": {
+    "$type": "color",
+    "page":    { "$value": "{color.sv-seda}",   "$description": "App page background. Light-mode only in v0.1.0; Phase 2 adds dark." },
+    "card":    { "$value": "{color.white}",      "$description": "Card / elevated surface background." },
+    "sidebar": { "$value": "{color.antracit}",   "$description": "Sidebar background — always dark." }
+  },
+  "text": {
+    "$type": "color",
+    "primary":   { "$value": "{color.antracit}",    "$description": "Default body text color." },
+    "secondary": { "$value": "{color.sv-antracit}", "$description": "Muted/secondary text color." }
+  }
+}

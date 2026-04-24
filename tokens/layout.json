@@ -1,0 +1,8 @@
+{
+  "layout": {
+    "$type": "dimension",
+    "sidebar-width":     { "$value": "240px",  "$description": "Sidebar width — antracit background, white text/icons." },
+    "content-max-width": { "$value": "1200px", "$description": "Main content max width — centered in content area." },
+    "min-width":         { "$value": "1024px", "$description": "Breakpoint below which layout should not break." }
+  }
+}

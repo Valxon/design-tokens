@@ -1,0 +1,14 @@
+{
+  "duration": {
+    "$type": "duration",
+    "fast": { "$value": "120ms", "$description": "Row hover backgrounds, micro-interactions." },
+    "base": { "$value": "150ms", "$description": "Default for all interactive elements." },
+    "slow": { "$value": "200ms", "$description": "Page transitions." }
+  },
+  "easing": {
+    "$type": "cubicBezier",
+    "standard":   { "$value": [0.4, 0.0, 0.2, 1], "$description": "Standard ease-out curve." },
+    "emphasized": { "$value": [0.2, 0.0, 0, 1],   "$description": "Emphasized entry (e.g., modal open)." },
+    "decelerate": { "$value": [0, 0, 0.2, 1],     "$description": "Decelerate — element settling into place." }
+  }
+}

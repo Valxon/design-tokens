@@ -1,0 +1,11 @@
+{
+  "spacing": {
+    "$type": "dimension",
+    "unit":            { "$value": "4px",  "$description": "Base grid unit." },
+    "card-padding":    { "$value": "20px", "$description": "Card internal padding." },
+    "section-gap":     { "$value": "24px", "$description": "Gap between sections." },
+    "card-gap":        { "$value": "16px", "$description": "Gap between cards in a grid." },
+    "content-padding": { "$value": "40px", "$description": "Content area horizontal padding." },
+    "content-top":     { "$value": "32px", "$description": "Content area top padding." }
+  }
+}
