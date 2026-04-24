@@ -1,6 +1,6 @@
 {
   "name": "@valxon/design-tokens",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": false,
   "description": "Valxon design primitives — generated from DTCG JSON via Style Dictionary.",
   "type": "module",
@@ -38,7 +38,6 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "prepare": "node src/build.mjs",
     "preview": "node src/generate-preview.mjs",
     "format": "prettier --write ."
   },
