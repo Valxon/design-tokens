@@ -4,7 +4,7 @@ import { writeFileSync, mkdtempSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 
-const CHECK_SCRIPT = join(__dirname, "..", "src", "check.mjs");
+const CHECK_SCRIPT = join(import.meta.dirname, "..", "src", "check.mjs");
 
 function runCheckIn(deps: Record<string, string>): { exitCode: number; stdout: string; stderr: string } {
   const dir = mkdtempSync(join(tmpdir(), "vx-check-"));
@@ -12,8 +12,9 @@ function runCheckIn(deps: Record<string, string>): { exitCode: number; stdout: s
   try {
     const stdout = execSync(`node ${CHECK_SCRIPT}`, { cwd: dir, encoding: "utf8" });
     return { exitCode: 0, stdout, stderr: "" };
-  } catch (err: any) {
-    return { exitCode: err.status ?? 1, stdout: err.stdout?.toString() ?? "", stderr: err.stderr?.toString() ?? "" };
+  } catch (err) {
+    const e = err as { status?: number; stdout?: Buffer; stderr?: Buffer };
+    return { exitCode: e.status ?? 1, stdout: e.stdout?.toString() ?? "", stderr: e.stderr?.toString() ?? "" };
   } finally {
     rmSync(dir, { recursive: true, force: true });
   }

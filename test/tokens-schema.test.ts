@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 
-const TOKENS_DIR = join(__dirname, "..", "tokens");
+const TOKENS_DIR = join(import.meta.dirname, "..", "tokens");
 
 type DtcgNode = {
   $value?: unknown;
