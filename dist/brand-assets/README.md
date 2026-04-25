@@ -15,13 +15,13 @@ All assets use `fill="currentColor"`, so they take their color from the surround
 
 ## Composition rules
 
-Verbatim from the brand manual (`brand_manual_valxon.pdf` p.9, "Brand assets — Principy"). Czech is the canonical text; English is a translation. The same rules are also encoded machine-readably in `manifest.json` under `compositionRules.rules` (with both `cs` and `en` keys).
+From the brand manual (`brand_manual_valxon.pdf` p.9, "Brand assets — Principy"). Same rules are encoded in `manifest.json` under `compositionRules.rules` for programmatic access.
 
-1. **Slouží jako textury na pozadí.** — Used as background textures.
-2. **Části motivu mohou sloužit jako rozdělovníky sekcí (viz hlavička).** — Parts of the motif may serve as section dividers (see the header). Fragments are OK — you don't have to use the whole shape.
-3. **Červené motivy zabírají maximálně 30 % celého formátu.** — Red motifs occupy at most 30% of the entire format.
-4. **Motivy se nikdy nepřekrývají a mají vždy podobné měřítko.** — Motifs never overlap and always have a similar scale to each other.
-5. **Používají se vždy ve větším formátu než dokument/předmět, na kterém jsou a fungují tak jako abstraktní organické tvary, které zastupují ilustrace či jiné grafické prvky.** — Always used in a format larger than the document/object they appear on, functioning as abstract organic shapes that replace illustrations or other graphical elements.
+1. **Use as background textures.** Not as foreground content.
+2. **Parts of a motif may serve as section dividers** (see the header pattern in the brand manual). Fragments are OK — the whole shape isn't required.
+3. **Red motifs (`malina` / `sv-malina`) occupy at most 30% of the entire format.** Most of the surface stays neutral; red is an accent.
+4. **Motifs never overlap, and motifs in the same composition always share a similar scale.**
+5. **Always used in a format larger than the document/surface they appear on** — they function as abstract organic shapes that replace illustrations, never as contained images of themselves.
 
 ## Recommended tones per surface
 

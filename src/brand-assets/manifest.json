@@ -34,28 +34,12 @@
   },
   "compositionRules": {
     "source": "brand_manual_valxon.pdf p.9 (Brand assets — Principy)",
-    "languageOfRecord": "cs-CZ",
     "rules": [
-      {
-        "cs": "Slouží jako textury na pozadí.",
-        "en": "Used as background textures."
-      },
-      {
-        "cs": "Části motivu mohou sloužit jako rozdělovníky sekcí (viz hlavička).",
-        "en": "Parts of the motif may serve as section dividers (see the header). Fragments are OK — you don't have to use the whole shape."
-      },
-      {
-        "cs": "Červené motivy zabírají maximálně 30 % celého formátu.",
-        "en": "Red motifs occupy at most 30% of the entire format."
-      },
-      {
-        "cs": "Motivy se nikdy nepřekrývají a mají vždy podobné měřítko.",
-        "en": "Motifs never overlap and always have a similar scale to each other."
-      },
-      {
-        "cs": "Používají se vždy ve větším formátu než dokument/předmět, na kterém jsou a fungují tak jako abstraktní organické tvary, které zastupují ilustrace či jiné grafické prvky.",
-        "en": "Always used in a format larger than the document/object they appear on, functioning as abstract organic shapes that replace illustrations or other graphical elements."
-      }
+      "Use as background textures.",
+      "Parts of a motif may serve as section dividers — fragments are OK, the whole shape isn't required.",
+      "Red motifs (malina/sv-malina) occupy at most 30% of the entire format.",
+      "Motifs never overlap, and motifs in the same composition always share a similar scale.",
+      "Always used in a format larger than the document/surface they appear on — they function as abstract organic shapes replacing illustrations, never as contained images of themselves."
     ],
     "recommendedTones": {
       "onLight": ["mid-seda", "antracit", "malina"],
