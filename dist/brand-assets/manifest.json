@@ -42,9 +42,18 @@
       "Always used in a format larger than the document/surface they appear on — they function as abstract organic shapes replacing illustrations, never as contained images of themselves."
     ],
     "recommendedTones": {
-      "onLight": ["mid-seda", "antracit", "malina"],
-      "onDark": ["white", "sv-antracit", "malina"],
-      "onMalina": ["white", "sv-malina"]
+      "onLight": { "texture": ["mid-seda"], "accent": ["malina"] },
+      "onDark":  { "texture": ["sv-antracit", "white/10"], "accent": ["malina"] },
+      "onMalina": { "texture": ["sv-malina", "white/15"], "accent": [] }
+    },
+    "linterHints": {
+      "$comment": "Non-binding numeric hints for future linters / a Phase-2 <BrandPanel> validator. Derived from measuring the four reference compositions in the brand manual + Figma node 2376:165. See README.md '#Reading the example compositions' for the source.",
+      "maxRedCoverageRatio": 0.30,
+      "maxAssetsPerComposition": 2,
+      "minScaleMultiplierVsFrame": 1.5,
+      "shouldOverlap": false,
+      "preferredAnchor": "edge-or-corner",
+      "discouragedAnchor": "centered"
     }
   }
 }
