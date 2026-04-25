@@ -1,0 +1,49 @@
+{
+  "$schema": "../../docs/brand-assets-schema.json",
+  "version": 1,
+  "description": "Valxon brand-asset catalog. Reference: brand_manual_valxon.pdf p.8 (silhouettes) + p.9 (composition rules).",
+  "assets": {
+    "fossil-jaw": {
+      "file": "fossil-jaw.svg",
+      "viewBox": "0 0 314 116",
+      "category": "fossil",
+      "naturalAspect": 2.71,
+      "description": "Carnivorous-dinosaur jaw fossil silhouette. Wide horizontal motif — works well as a band along an edge."
+    },
+    "fern-leaves": {
+      "file": "fern-leaves.svg",
+      "viewBox": "0 0 205 252",
+      "category": "leaf",
+      "naturalAspect": 0.81,
+      "description": "Cluster of fern-frond leaves. Compact, organic, several internal shapes — works as a focal motif."
+    },
+    "ginkgo-leaf": {
+      "file": "ginkgo-leaf.svg",
+      "viewBox": "0 0 244 219",
+      "category": "leaf",
+      "naturalAspect": 1.11,
+      "description": "Single ginkgo leaf with stem. Roughly square; the most figurative of the four."
+    },
+    "dinosaur-footprint": {
+      "file": "dinosaur-footprint.svg",
+      "viewBox": "0 0 177 213",
+      "category": "fossil",
+      "naturalAspect": 0.83,
+      "description": "Three-toed theropod footprint silhouette. Vertical motif — the company-mascot reference (Vašek the T-Rex)."
+    }
+  },
+  "compositionRules": {
+    "source": "brand_manual_valxon.pdf p.9",
+    "rules": [
+      "Use as background textures, section dividers, motifs on promotional items, or abstract motifs replacing illustration.",
+      "Red (malina/sv-malina) motifs occupy at most 30% of the format.",
+      "Motifs do not overlap each other.",
+      "Motifs are scaled larger than the format and partially clipped — never placed whole inside the frame."
+    ],
+    "recommendedTones": {
+      "onLight": ["mid-seda", "antracit", "malina"],
+      "onDark": ["white", "sv-antracit", "malina"],
+      "onMalina": ["white", "sv-malina"]
+    }
+  }
+}

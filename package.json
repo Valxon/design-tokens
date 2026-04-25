@@ -1,6 +1,6 @@
 {
   "name": "@valxon/design-tokens",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "private": false,
   "description": "Valxon design primitives — generated from DTCG JSON via Style Dictionary.",
   "type": "module",
@@ -30,7 +30,9 @@
     "./fonts/next": {
       "import": "./dist/fonts-next.js",
       "types": "./dist/fonts-next.d.ts"
-    }
+    },
+    "./brand-assets/manifest.json": "./dist/brand-assets/manifest.json",
+    "./brand-assets/*": "./dist/brand-assets/*"
   },
   "scripts": {
     "build": "node src/build.mjs",
