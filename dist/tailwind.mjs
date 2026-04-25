@@ -121,7 +121,8 @@ export default {
       "borderRadius": {
         "small": "8px",
         "avatar": "10px",
-        "card": "12px"
+        "card": "12px",
+        "hero": "16px"
       },
       "boxShadow": {
         "card": "0 1px 3px 0 rgba(0,0,0,0.04)",
