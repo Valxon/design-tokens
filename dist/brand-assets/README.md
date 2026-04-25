@@ -13,12 +13,15 @@ Vector silhouettes from the Valxon brand manual (`brand_manual_valxon.pdf` p.8).
 
 All assets use `fill="currentColor"`, so they take their color from the surrounding text color (or whatever `color`/`fill` you set on the parent).
 
-## Composition rules (from the brand manual, p.9)
+## Composition rules
 
-1. **Use as background textures, section dividers, motifs on promotional items, or abstract motifs replacing illustration.** Never as illustrations of themselves — they're textures.
-2. **Red (malina/sv-malina) motifs occupy at most 30% of the format.**
-3. **Motifs do not overlap each other.**
-4. **Motifs are scaled larger than the format and partially clipped.** Never placed whole inside the frame — they should bleed off the edge so the viewer sees a fragment, not a contained illustration.
+Verbatim from the brand manual (`brand_manual_valxon.pdf` p.9, "Brand assets — Principy"). Czech is the canonical text; English is a translation. The same rules are also encoded machine-readably in `manifest.json` under `compositionRules.rules` (with both `cs` and `en` keys).
+
+1. **Slouží jako textury na pozadí.** — Used as background textures.
+2. **Části motivu mohou sloužit jako rozdělovníky sekcí (viz hlavička).** — Parts of the motif may serve as section dividers (see the header). Fragments are OK — you don't have to use the whole shape.
+3. **Červené motivy zabírají maximálně 30 % celého formátu.** — Red motifs occupy at most 30% of the entire format.
+4. **Motivy se nikdy nepřekrývají a mají vždy podobné měřítko.** — Motifs never overlap and always have a similar scale to each other.
+5. **Používají se vždy ve větším formátu než dokument/předmět, na kterém jsou a fungují tak jako abstraktní organické tvary, které zastupují ilustrace či jiné grafické prvky.** — Always used in a format larger than the document/object they appear on, functioning as abstract organic shapes that replace illustrations or other graphical elements.
 
 ## Recommended tones per surface
 
