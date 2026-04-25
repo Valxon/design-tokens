@@ -61,31 +61,22 @@ These are recurring traps that future contributors (humans + LLMs) reach for. No
 
 ## Worked example: dark brand panel with one neutral fern + one red ginkgo accent
 
-This is the canonical pattern for the auth-screen brand panel in vmp / sales-coach. Paste-ready:
+This is the canonical pattern for the auth-screen brand panel in vmp / sales-coach. Uses the `<BrandAsset>` Server Component from the consumption section above. Paste-ready:
 
 ```tsx
-import Image from "next/image"
-import fernLeaves from "@valxon/design-tokens/brand-assets/fern-leaves.svg"
-import ginkgoLeaf from "@valxon/design-tokens/brand-assets/ginkgo-leaf.svg"
+// In any Server Component:
+import { BrandAsset } from "@/app/components/BrandAsset"
 
 <div className="relative overflow-hidden bg-antracit">
   {/* Texture-role motif: large, near-invisible, anchored top-left, bleeds off-frame */}
-  <Image
-    src={fernLeaves}
-    alt=""
-    aria-hidden
-    width={205}
-    height={252}
-    className="absolute -top-20 -left-32 w-[80%] h-auto text-sv-antracit"
+  <BrandAsset
+    name="fern-leaves"
+    className="absolute -top-20 -left-32 w-[80%] text-sv-antracit"
   />
   {/* Accent-role motif: smaller, malina red, anchored bottom-right, also bleeds off-frame */}
-  <Image
-    src={ginkgoLeaf}
-    alt=""
-    aria-hidden
-    width={244}
-    height={219}
-    className="absolute -bottom-24 -right-20 w-[40%] h-auto text-malina"
+  <BrandAsset
+    name="ginkgo-leaf"
+    className="absolute -bottom-24 -right-20 w-[40%] text-malina"
   />
   {/* foreground content goes here, above both motifs */}
 </div>
@@ -96,36 +87,70 @@ Why this is on-brand:
 - Ginkgo is the single red accent (rule 3 — covers ~12% of the panel, well under 30%)
 - Neither motif overlaps the other (rule 4 — they're in opposite corners)
 - Both bleed off-edge (rule 5 — negative `top`/`left`/`bottom`/`right` offsets, scale > frame)
+- Uses the inline-SVG pattern so `text-sv-antracit` / `text-malina` actually flow into the SVG's `fill="currentColor"` (using `next/image` here would silently render both motifs in the SVG default and you'd see nothing — see the consumption-section warning)
 
 ## Consumption (Phase 1 — raw SVG imports)
 
-### Next.js / Webpack / Vite
+> ⚠️ **`next/image` (and any `<img>` tag) does NOT work for color control.** The browser renders `<img src=".svg">` as a replaced element — CSS `color` doesn't cascade into the image's shadow DOM, so `fill="currentColor"` resolves to the SVG default (effectively invisible) regardless of any `text-*` Tailwind class on the wrapper. **You must inline the SVG** to get the color/tone control these assets are designed for. Patterns below.
+
+### Server Component — inline via `fs.readFileSync` (Next.js App Router; preferred)
 
 ```tsx
-import fernLeaves from "@valxon/design-tokens/brand-assets/fern-leaves.svg"
+// app/components/BrandAsset.tsx
+import fs from "node:fs"
+import { createRequire } from "node:module"
 
-<Image
-  src={fernLeaves}
-  alt=""
-  aria-hidden
-  width={400}
-  height={494}
-  className="absolute -top-20 -left-20 w-[60%] text-white/10"
+const require = createRequire(import.meta.url)
+const cache = new Map<string, string>()
+
+type AssetName = "fern-leaves" | "ginkgo-leaf" | "fossil-jaw" | "dinosaur-footprint"
+
+export function BrandAsset({ name, className }: { name: AssetName; className?: string }) {
+  let svg = cache.get(name)
+  if (!svg) {
+    const p = require.resolve(`@valxon/design-tokens/brand-assets/${name}.svg`)
+    svg = fs.readFileSync(p, "utf8")
+    cache.set(name, svg)
+  }
+  return <span aria-hidden className={className} dangerouslySetInnerHTML={{ __html: svg }} />
+}
+```
+
+Then in any page or layout:
+
+```tsx
+<BrandAsset
+  name="fern-leaves"
+  className="absolute -top-20 -left-32 w-[80%] text-sv-antracit"
 />
 ```
 
-The `width`/`height` props are required by `next/image` for layout calculation; the `viewBox` in the SVG itself preserves the aspect ratio.
+The `<span>` carries the Tailwind `text-*` class; CSS `color` flows into the inlined `<svg>`'s `fill="currentColor"` paths. Width/height come from the className (the SVG has no fixed `width`/`height` — only `viewBox` — so it scales fluidly to the parent).
 
-### Inline `<svg>` with `dangerouslySetInnerHTML` (when you need full color control)
+### Vite / esbuild — `?raw` query suffix (alternative)
+
+If your bundler supports it (Vite does natively, Webpack via `raw-loader`):
 
 ```tsx
-import fs from "node:fs/promises"
-const svg = await fs.readFile(
-  require.resolve("@valxon/design-tokens/brand-assets/fern-leaves.svg"),
-  "utf8"
-)
-// Render via dangerouslySetInnerHTML in a server component, etc.
+import fernLeavesRaw from "@valxon/design-tokens/brand-assets/fern-leaves.svg?raw"
+
+<span aria-hidden className="absolute -top-20 -left-32 w-[80%] text-sv-antracit"
+      dangerouslySetInnerHTML={{ __html: fernLeavesRaw }} />
 ```
+
+Same outcome as the Server Component pattern, no filesystem read at request time.
+
+### SVGR (Webpack/Next.js with `@svgr/webpack` configured)
+
+If your app already configures SVGR to import SVGs as React components:
+
+```tsx
+import FernLeaves from "@valxon/design-tokens/brand-assets/fern-leaves.svg"
+
+<FernLeaves aria-hidden className="absolute -top-20 -left-32 w-[80%] text-sv-antracit" />
+```
+
+Next.js does NOT enable SVGR by default — only use this pattern if your app already has SVGR in the bundler config.
 
 ### Manifest-driven enumeration
 

@@ -1,5 +1,4 @@
 {
-  "$schema": "../../docs/brand-assets-schema.json",
   "version": 1,
   "description": "Valxon brand-asset catalog. Reference: brand_manual_valxon.pdf p.8 (silhouettes) + p.9 (composition rules).",
   "assets": {
