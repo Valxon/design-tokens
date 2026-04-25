@@ -1,5 +1,5 @@
 import StyleDictionary from "style-dictionary";
-import { mkdirSync, writeFileSync, copyFileSync, existsSync } from "node:fs";
+import { mkdirSync, writeFileSync, copyFileSync, existsSync, readdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -17,6 +17,9 @@ async function main() {
 
   // Copy the static fonts/next helper — hand-written, not generated.
   copyFonts();
+
+  // Copy raw brand-asset SVGs + manifest into dist/brand-assets/.
+  copyBrandAssets();
 
   console.log("✓ build complete");
 }
@@ -73,6 +76,19 @@ function copyFonts() {
   // Copy as-is; consumers running Next.js will transpile it in their build.
   copyFileSync(src, dst);
   writeFileSync(dstDts, `export declare const sans: import("next/font").NextFontWithVariable;\nexport declare const mono: import("next/font").NextFontWithVariable;\n`);
+}
+
+function copyBrandAssets() {
+  const srcDir = join(ROOT, "src", "brand-assets");
+  const dstDir = join(DIST, "brand-assets");
+  if (!existsSync(srcDir)) {
+    throw new Error(`Expected ${srcDir} to exist.`);
+  }
+  mkdirSync(dstDir, { recursive: true });
+  for (const file of readdirSync(srcDir)) {
+    if (!file.endsWith(".svg") && !file.endsWith(".json") && !file.endsWith(".md")) continue;
+    copyFileSync(join(srcDir, file), join(dstDir, file));
+  }
 }
 
 main().catch((err) => {

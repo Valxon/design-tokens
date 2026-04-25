@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "description": "Valxon brand-asset catalog. Reference: brand_manual_valxon.pdf p.8 (silhouettes) + p.9 (composition rules).",
+  "assets": {
+    "fossil-jaw": {
+      "file": "fossil-jaw.svg",
+      "viewBox": "0 0 314 116",
+      "category": "fossil",
+      "naturalAspect": 2.71,
+      "description": "Carnivorous-dinosaur jaw fossil silhouette. Wide horizontal motif — works well as a band along an edge."
+    },
+    "fern-leaves": {
+      "file": "fern-leaves.svg",
+      "viewBox": "0 0 205 252",
+      "category": "leaf",
+      "naturalAspect": 0.81,
+      "description": "Cluster of fern-frond leaves. Compact, organic, several internal shapes — works as a focal motif."
+    },
+    "ginkgo-leaf": {
+      "file": "ginkgo-leaf.svg",
+      "viewBox": "0 0 244 219",
+      "category": "leaf",
+      "naturalAspect": 1.11,
+      "description": "Single ginkgo leaf with stem. Roughly square; the most figurative of the four."
+    },
+    "dinosaur-footprint": {
+      "file": "dinosaur-footprint.svg",
+      "viewBox": "0 0 177 213",
+      "category": "fossil",
+      "naturalAspect": 0.83,
+      "description": "Three-toed theropod footprint silhouette. Vertical motif — the company-mascot reference (Vašek the T-Rex)."
+    }
+  },
+  "compositionRules": {
+    "source": "brand_manual_valxon.pdf p.9 (Brand assets — Principy)",
+    "rules": [
+      "Use as background textures.",
+      "Parts of a motif may serve as section dividers — fragments are OK, the whole shape isn't required.",
+      "Red motifs (malina/sv-malina) occupy at most 30% of the entire format.",
+      "Motifs never overlap, and motifs in the same composition always share a similar scale.",
+      "Always used in a format larger than the document/surface they appear on — they function as abstract organic shapes replacing illustrations, never as contained images of themselves."
+    ],
+    "recommendedTones": {
+      "onLight": { "texture": ["mid-seda"], "accent": ["malina"] },
+      "onDark":  { "texture": ["sv-antracit", "white/10"], "accent": ["malina"] },
+      "onMalina": { "texture": ["sv-malina", "white/15"], "accent": [] }
+    },
+    "linterHints": {
+      "$comment": "Non-binding numeric hints for future linters / a Phase-2 <BrandPanel> validator. Derived from measuring the four reference compositions in the brand manual + Figma node 2376:165. See README.md '#Reading the example compositions' for the source.",
+      "maxRedCoverageRatio": 0.30,
+      "maxAssetsPerComposition": 2,
+      "minScaleMultiplierVsFrame": 1.5,
+      "shouldOverlap": false,
+      "preferredAnchor": "edge-or-corner",
+      "discouragedAnchor": "centered"
+    }
+  }
+}
