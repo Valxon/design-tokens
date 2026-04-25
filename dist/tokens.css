@@ -51,6 +51,7 @@
   --radius-small: 8px;
   --radius-avatar: 10px;
   --radius-card: 12px;
+  --radius-hero: 16px;
   --shadow-card: 0 1px 3px 0 rgba(0,0,0,0.04);
   --shadow-card-hover: 0 4px 12px 0 rgba(0,0,0,0.06);
   --border-card: dashed;

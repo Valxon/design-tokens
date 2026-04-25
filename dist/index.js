@@ -80,7 +80,8 @@ export const spacing = Object.freeze({
 export const radius = Object.freeze({
   small: "8px",
   avatar: "10px",
-  card: "12px"
+  card: "12px",
+  hero: "16px"
 });
 
 export const shadow = Object.freeze({
